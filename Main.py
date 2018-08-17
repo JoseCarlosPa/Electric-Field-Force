@@ -24,11 +24,10 @@ import Libreria
 # End Libraries
 
 opcion = 0
-while opcion != 7:
+while opcion != 3:
         Libreria.clear_screen()
         Libreria.menu()  # Mostrar menu
         opcion = Libreria.lee_si_es_nuemero()
-        # Programa numero uno
         if opcion == 1:
             Libreria.clear_screen()
             print("Calculo de Fuerza Magnetica")
