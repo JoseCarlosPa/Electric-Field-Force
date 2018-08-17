@@ -1,0 +1,25 @@
+Objetive: A program that performs calculation of the force between charges and electric field
+
+Functionals: 
+- N number of charges
+- Ask for the process
+- Calculate Force between N number of charges
+- Calculate Field between N number of charges
+-
+
+No-Functionals:
+- Charges Cant be letters
+-
+-
+
+Information:
+-
+-
+
+Interface: 
+-
+-
+
+Business: 
+-
+-
