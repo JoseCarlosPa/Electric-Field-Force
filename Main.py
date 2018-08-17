@@ -14,6 +14,7 @@
 -----------------------------------
 *Date : 17 August 2018
 *Subject : Electricity and Mangetism
+*
 """
 # Libraries
 import time
