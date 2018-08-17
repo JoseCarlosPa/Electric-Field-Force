@@ -4,13 +4,17 @@
 *Name : Jose Carlos Pacheco Sanchez
 *ID :A01702828
 -----------------------------------
-*Date : 17 August 2018
-*Subject : Electricity and Mangetism
 *OS Enviorment : Mac OS Sierra 10.13.6 build
 * Developed on Pycharm PyCharm 2018.2.1 (Professional Edition) Build #PY-182.3911.33
+----------------------------------
+*Name : Hugo David Franco Avila  -
+*ID:
+*Os Enviorment: Windows 10
 *
+-----------------------------------
+*Date : 17 August 2018
+*Subject : Electricity and Mangetism
 """
-
 # Libraries
 import time
 import os
