@@ -7,9 +7,10 @@
 *OS Enviorment : Mac OS Sierra 10.13.6 build
 * Developed on Pycharm PyCharm 2018.2.1 (Professional Edition) Build #PY-182.3911.33
 ----------------------------------
-*Name : Hugo David Franco Avila  -
-*ID:
-*Os Enviorment: Windows 10
+*Name : Hugo David Franco Avila
+*ID: A01654856
+*Os Enviorment: Windows 10 10.0.17134.228
+*Bloc de Notas
 *
 -----------------------------------
 *Date : 17 August 2018

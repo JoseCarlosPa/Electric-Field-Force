@@ -4,11 +4,11 @@ import os
 # --------------------------Seccion de Menus y partes Graficas de bajo nivel-------------------------------------------
 
 def menu():
-    print("|------Menu---------|")
-    print("| 1. Theory         |")
-    print("| 2. Program        |")
-    print("| 3. Exit           |")
-    print("|-------------------|")
+    print("|------Menu------------------|")
+    print("| 1. Calculate Force         |")
+    print("| 2. Calculate Field         |")
+    print("| 3. Exit                    |")
+    print("|----------------------------|")
 
 # ---------Fin de la seccion  de Menus y partes Graficas de bajo nivel, inicio de funciones y procedimientos-----------
 
