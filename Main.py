@@ -10,7 +10,7 @@
 *Name : Hugo David Franco Avila
 *ID: A01654856
 *Os Enviorment: Windows 10 10.0.17134.228
-*Bloc de Notas
+*Developed on Bloc de Notas
 *
 -----------------------------------
 *Date : 17 August 2018
@@ -18,7 +18,7 @@
 *
 """
 # Libraries
-import time
+
 import Libreria
 
 # End Libraries
@@ -30,18 +30,19 @@ while opcion != 3:
     Libreria.clear_screen()
     if opcion == 1:
         print "++Calculo Fuerza magentica++\n"
-        Libreria.pedir_particulas()
+        # Libreria.pedir_particulas()
         print ("Desea mostrar Procediemiento?:")
-        respuesta = raw_input("SI / No")
-        if respuesta == "SI" or respuesta == "si" or respuesta == "Si" or respuesta == "sI":
+        respuesta = raw_input("SI / No")  # Pedimos una respeusta
+        if respuesta == "SI" or respuesta == "si" or respuesta == "Si" or respuesta == "sI":  # Validaciond de casi
+            # Cualquier respuesta
             print "Muestra procedimiento"
-            time.sleep(5)
+            raw_input("\nPess Enter to conitnue")
         else:
             print "No muestra procedimeinto"
-            time.sleep(5)
+            raw_input("\nPress Enter to conitnue")
     elif opcion == 2:
         print("Calulo de Campo Magnetico")
-        time.sleep(3)
+        raw_input("\nPress Enter to conitnue")
 
     else:
         break

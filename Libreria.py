@@ -3,6 +3,7 @@ import os
 xyz = ["X", "Y", "Z"]
 lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
 vector_particula = []  # Para el valor del vector en cada particula
+
 # --------------------------Seccion de Menus y partes Graficas de bajo nivel-------------------------------------------
 
 
@@ -61,6 +62,7 @@ def pedir_particulas():
                 vector_particula[y + (x * 3)]))  # Llamara de la lsita vecotr el valor en x*r
             # De esta manera se asegura que sea de la carga correcta
     print("|-----------------------------------------|")
+
 
 def calcular_fuerza():
     print lista_particulas[0]
