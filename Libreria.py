@@ -1,7 +1,8 @@
 import os
 
 xyz = ["X", "Y", "Z"]
-
+lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
+vector_particula = []  # Para el valor del vector en cada particula
 # --------------------------Seccion de Menus y partes Graficas de bajo nivel-------------------------------------------
 
 
@@ -35,10 +36,12 @@ def clear_screen():   # Funcion para limpiar la pantalla dependiendo del sistema
     elif os.name == ("ce", "nt", "dos"):
         os.system("cls")
 
+# Funcion que pide el numbero de particulas e imprime en pantalla de forma ordenada ademas de almacenar en las lsitas
+# Correspondientes
+
 
 def pedir_particulas():
-    lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
-    vector_particula = []  # Para el valor del vector en cada particula
+
     numbero_particuasl = input("Ingresa el numbero de particulas:")
     for x in range(numbero_particuasl):  # Dependiendo del numero de particulas ingresado se repetira el ciclo
         print("|-------------------------------------------|")
@@ -58,3 +61,6 @@ def pedir_particulas():
                 vector_particula[y + (x * 3)]))  # Llamara de la lsita vecotr el valor en x*r
             # De esta manera se asegura que sea de la carga correcta
     print("|-----------------------------------------|")
+
+def calcular_fuerza():
+    print lista_particulas[0]

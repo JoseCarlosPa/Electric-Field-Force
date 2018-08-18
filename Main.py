@@ -31,7 +31,14 @@ while opcion != 3:
     if opcion == 1:
         print "++Calculo Fuerza magentica++\n"
         Libreria.pedir_particulas()
-        time.sleep(5)
+        print ("Desea mostrar Procediemiento?:")
+        respuesta = raw_input("SI / No")
+        if respuesta == "SI" or respuesta == "si" or respuesta == "Si" or respuesta == "sI":
+            print "Muestra procedimiento"
+            time.sleep(5)
+        else:
+            print "No muestra procedimeinto"
+            time.sleep(5)
     elif opcion == 2:
         print("Calulo de Campo Magnetico")
         time.sleep(3)
