@@ -1,7 +1,9 @@
 import os
 
+xyz = ["X", "Y", "Z"]
 
 # --------------------------Seccion de Menus y partes Graficas de bajo nivel-------------------------------------------
+
 
 def menu():
     print("|------Menu------------------|")
@@ -32,3 +34,27 @@ def clear_screen():   # Funcion para limpiar la pantalla dependiendo del sistema
         os.system("clear")
     elif os.name == ("ce", "nt", "dos"):
         os.system("cls")
+
+
+def pedir_particulas():
+    lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
+    vector_particula = []  # Para el valor del vector en cada particula
+    numbero_particuasl = input("Ingresa el numbero de particulas:")
+    for x in range(numbero_particuasl):  # Dependiendo del numero de particulas ingresado se repetira el ciclo
+        print("|-------------------------------------------|")
+        carga = input("Ingresa la carga No " + str(x + 1) + ": ")
+        lista_particulas.append(carga)  # Agregar en lista
+        for y in range(3):  # Ingresa los varlores de x,y,z para la carga correspondiente
+            vector = input("Ingrese valor en " + xyz[y] + ": ")
+            vector_particula.append(vector)  # Agregar en lista
+    clear_screen()
+    # Impresion de particulas
+    for x in range(numbero_particuasl):
+        print("|-----------------------------------------|")
+        print ("Particula " + str(x + 1))
+        print ("Carga = " + str(lista_particulas[x]))  # Llamara de la lista_particulas el valor en x
+        for y in range(3):
+            print (xyz[y] + " = " + str(
+                vector_particula[y + (x * 3)]))  # Llamara de la lsita vecotr el valor en x*r
+            # De esta manera se asegura que sea de la carga correcta
+    print("|-----------------------------------------|")

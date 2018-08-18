@@ -19,24 +19,23 @@
 """
 # Libraries
 import time
-import os
 import Libreria
 
 # End Libraries
 
 opcion = 0
 while opcion != 3:
-        Libreria.clear_screen()
-        Libreria.menu()  # Mostrar menu
-        opcion = Libreria.lee_si_es_nuemero()
-        if opcion == 1:
-            Libreria.clear_screen()
-            print("Calculo de Fuerza Magnetica")
-            time.sleep(3)
-        elif opcion == 2:
-            print("Calulo de Campo Magnetico")
-            time.sleep(3)
+    Libreria.menu()  # Mostrar menu
+    opcion = Libreria.lee_si_es_nuemero()
+    Libreria.clear_screen()
+    if opcion == 1:
+        print "++Calculo Fuerza magentica++\n"
+        Libreria.pedir_particulas()
+        time.sleep(5)
+    elif opcion == 2:
+        print("Calulo de Campo Magnetico")
+        time.sleep(3)
 
-        else:
-            break
+    else:
+        break
 print("Fin programa")
