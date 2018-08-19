@@ -2,7 +2,7 @@ import os
 import math
 xyz = ["X", "Y", "Z"]  # Lista con string para representacion
 lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
-vector_particula = []  # Para el valor del vector en cada particula
+vector_particula = []  # Para el valor del vector en cada particula cx
 k = 9e+9  # Cosntante K con valor 9x10 ^9
 
 
@@ -80,7 +80,7 @@ def vector_resultante():
         raiz = 0
         cuadrado = 0
         for x in range(3):
-            vector = (vector_particula[(x+3)+(particula*3)]) - (vector_particula[x]) # Se toma el valor de la carga 1 y 2, y  se restan
+            vector = (vector_particula[x]) - (vector_particula[(x+3)+(particula*3)]) # Se toma el valor de la carga 1 y 2, y  se restan
             suma_vecotres.append(vector) # Se agregan a una nueva lista
         clear_screen()
         print("|------------suma vecotres----------------|")
@@ -99,8 +99,12 @@ def vector_resultante():
         for z in range (3):
 
             F =  (( k*(lista_particulas[0])*(lista_particulas[particula+1])) *suma_vecotres[z+(particula*3)])/raiz**3 # Se aplica la formula
-            print xyz[z] + " = " + str(F)
-        Resultado = Resultado + F
+            print xyz[z] + " =  %e" % F
+        Resultado = Resultado + F # Resultado Final
+
+
+
+
 
 
 
