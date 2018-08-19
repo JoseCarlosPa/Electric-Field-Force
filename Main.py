@@ -29,24 +29,15 @@ while opcion != 3:
     opcion = Libreria.lee_si_es_nuemero()
     Libreria.clear_screen()
     if opcion == 1:
-        print "++Calculo de la fuerza electrica++\n"
-        print "Defina la particula sobre la cual se ejerce la fuerza"
+        print "++Calculo Fuerza magentica++\n"
+        print ("Ponga la primera particula como la particual con la que se calculara todo")
         Libreria.pedir_particulas()
-        """
-        print ("Desea mostrar Procediemiento?:")
-        respuesta = raw_input("SI / No")  # Pedimos una respeusta
-        if respuesta == "SI" or respuesta == "si" or respuesta == "Si" or respuesta == "sI":  # Validaciond de casi
-            # Cualquier respuesta
-            print "Muestra procedimiento"
-            raw_input("\nPess Enter to conitnue")
-        else:
-        """
         Libreria.vector_resultante()
 
-        raw_input("\nPress Enter to continue")
+        raw_input("\nPress Enter to conitnue")
     elif opcion == 2:
-        print("Calulo de Campo Electrico")
-        raw_input("\nPress Enter to continue")
+        print("Calulo de Campo Magnetico")
+        raw_input("\nPress Enter to conitnue")
 
     else:
         break
