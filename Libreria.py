@@ -72,20 +72,28 @@ def numero_elementos_lista_particulas():  # Funcion que regresa el numero de ele
 
 # -------------------------------------------Calculo de Fuerza o campo Magentio ---------------------------------------
 
-
-def calcular_fuerza(particula):
+suma_vecotres = [] # Lista para la suma de vector
+def vector_resultante():
     raiz = 0
     cuadrado = 0
-    suma_vecotres = []
+
     for x in range(3):
-        vector_a_sumar = (vector_particula[x]) - (vector_particula[x+3])
-        suma_vecotres.append(vector_a_sumar)
-    print("|--------------------suma vecotres----------------|")
+        vector = (vector_particula[x]) - (vector_particula[x + 3])
+        suma_vecotres.append(vector)
+    print("|------------suma vecotres----------------|")
     for y in range(3):
         print (xyz[y] + " = " + str(suma_vecotres[y]))
-        cuadrado = cuadrado + suma_vecotres[y]**2
+        cuadrado = cuadrado + suma_vecotres[y] ** 2
         raiz = math.sqrt(cuadrado)
+        raiz = float(raiz)
     print raiz
+    print k
+    print lista_particulas[0]
+    print lista_particulas[1]
+    print raiz**3
+    F = (( k*(lista_particulas[0])*(lista_particulas[1])) *raiz)/raiz**3
+    print F
+
 
 
 
