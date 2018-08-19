@@ -74,7 +74,7 @@ while repetir == 'y'
         suma(i-1,3) = newVec(2);
         suma(i-1,4) = newVec(3);        
     end
-    %vecRes(1) = suma(
+    vecRes(1) = suma(
     repetir = 'y';
 end
     
