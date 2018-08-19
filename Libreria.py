@@ -78,7 +78,7 @@ def vector_resultante():
     cuadrado = 0
 
     for x in range(3):
-        vector = (vector_particula[x]) - (vector_particula[x + 3])
+        vector = (vector_particula[x]) - (vector_particula[x+3])
         suma_vecotres.append(vector)
     print("|------------suma vecotres----------------|")
     for y in range(3):
@@ -86,13 +86,15 @@ def vector_resultante():
         cuadrado = cuadrado + suma_vecotres[y] ** 2
         raiz = math.sqrt(cuadrado)
         raiz = float(raiz)
-    print raiz
-    print k
-    print lista_particulas[0]
-    print lista_particulas[1]
-    print raiz**3
-    F = (( k*(lista_particulas[0])*(lista_particulas[1])) *raiz)/raiz**3
-    print F
+    print("|------------Valores----------------|")
+
+    print "k  = " + str(k)
+    print "Q1 =" + str(lista_particulas[0])
+    print "Q2 = " + str(lista_particulas[1])
+    print "Raiz al cubo = " + str(raiz**3)
+    for z in range (3):
+        F = (( k*(lista_particulas[0])*(lista_particulas[1])) *suma_vecotres[z])/raiz**3
+        print xyz[z] + " = " + str(F)
 
 
 
