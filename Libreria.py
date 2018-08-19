@@ -1,8 +1,10 @@
 import os
-
-xyz = ["X", "Y", "Z"]
+import math
+xyz = ["X", "Y", "Z"]  # Lista con string para representacion
 lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
 vector_particula = []  # Para el valor del vector en cada particula
+k = 9e+9  # Cosntante K con valor 9x10 ^9
+
 
 # --------------------------Seccion de Menus y partes Graficas de bajo nivel-------------------------------------------
 
@@ -27,7 +29,7 @@ def lee_si_es_nuemero():
             return opcion
         except ValueError:
             print "Has ingresado una opcion no valida, intentalo otra vez por favor"\
-                "las opciones validas son numeros como 1,2,3...10, no se pueden negativos , decimal o letras"
+                "las opciones validas son numeros como 1,2,3...10 , decimal o letras"
 
 
 def clear_screen():   # Funcion para limpiar la pantalla dependiendo del sistema Operativo, sea Unix/mac o Windows /DOS
@@ -46,7 +48,7 @@ def pedir_particulas():
     numbero_particuasl = input("Ingresa el numbero de particulas:")
     for x in range(numbero_particuasl):  # Dependiendo del numero de particulas ingresado se repetira el ciclo
         print("|-------------------------------------------|")
-        carga = input("Ingresa la carga No " + str(x + 1) + ": ")
+        carga = input("Ingresa la carga No " + str(x + 1) + ": (# e +/- #): ")
         lista_particulas.append(carga)  # Agregar en lista
         for y in range(3):  # Ingresa los varlores de x,y,z para la carga correspondiente
             vector = input("Ingrese valor en " + xyz[y] + ": ")
@@ -64,5 +66,30 @@ def pedir_particulas():
     print("|-----------------------------------------|")
 
 
-def calcular_fuerza():
-    print lista_particulas[0]
+def numero_elementos_lista_particulas():  # Funcion que regresa el numero de elementos que tiene mas 1
+    numero = len(lista_particulas)
+    return numero
+
+# -------------------------------------------Calculo de Fuerza o campo Magentio ---------------------------------------
+
+
+def calcular_fuerza(particula):
+    raiz = 0
+    cuadrado = 0
+    suma_vecotres = []
+    for x in range(3):
+        vector_a_sumar = (vector_particula[x]) - (vector_particula[x+3])
+        suma_vecotres.append(vector_a_sumar)
+    print("|--------------------suma vecotres----------------|")
+    for y in range(3):
+        print (xyz[y] + " = " + str(suma_vecotres[y]))
+        cuadrado = cuadrado + suma_vecotres[y]**2
+        raiz = math.sqrt(cuadrado)
+    print raiz
+
+
+
+
+
+
+
