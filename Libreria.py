@@ -100,7 +100,7 @@ def vector_resultante():
 
             F =  (( k*(lista_particulas[0])*(lista_particulas[particula+1])) *suma_vecotres[z+(particula*3)])/raiz**3 # Se aplica la formula
             print xyz[z] + " = " + str(F)
-        Resultado = Resultado + F
+        Resultado = Resultado + F # Resultado Final
 
 
 
