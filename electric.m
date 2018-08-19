@@ -13,6 +13,7 @@ clear all
 disp('Este script encontrara la fuerza electrica o el campo electrico')
 repetir = 'y';
 k = 9e09;
+z = 0;
 while repetir == 'y'
     numCargas = input('Cuantas cargas hay en su sistema?\n');
     disp('Desea encontrar la fuerza electrica sobre una carga o el campo electrico en un punto?')
@@ -72,9 +73,13 @@ while repetir == 'y'
         suma(i-1,1) = (k*arregloCargas(1,1)*arregloCargas(i,1))/(magnitud*magnitud*magnitud);
         suma(i-1,2) = newVec(1);
         suma(i-1,3) = newVec(2);
-        suma(i-1,4) = newVec(3);        
+        suma(i-1,4) = newVec(3); 
+        vecRes(1) = vecRes(1)+suma(i-1,1)*suma(i-1,2);
+        vecRes(2) = vecRes(2)+suma(i-1,1)*suma(i-1,3);
+        vecRes(3) = vecRes(3)+suma(i-1,1)*suma(i-1,4);
     end
-    %vecRes(1) = suma(
-    repetir = 'y';
+    fprintf('\n\nEl resultado es (%f) i + (%f) j + (%f) k V/m\n\n',vecRes(1),vecRes(2),vecRes(3))
+    
+    repetir = 'n';
 end
     

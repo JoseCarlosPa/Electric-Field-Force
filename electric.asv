@@ -72,9 +72,14 @@ while repetir == 'y'
         suma(i-1,1) = (k*arregloCargas(1,1)*arregloCargas(i,1))/(magnitud*magnitud*magnitud);
         suma(i-1,2) = newVec(1);
         suma(i-1,3) = newVec(2);
-        suma(i-1,4) = newVec(3);        
+        suma(i-1,4) = newVec(3); 
+        vecRes(1) = vecRes(1)+suma(i-1,1)*suma(i-1);
+        vecRes(2) = vecRes(1)+suma(i-1,1)*suma(i-1);
+        vecRes(1) = vecRes(1)+suma(i-1,1)*suma(i-1);
+        
     end
-    vecRes(1) = suma(
+    
+    
     repetir = 'y';
 end
     
