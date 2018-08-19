@@ -74,29 +74,33 @@ def numero_elementos_lista_particulas():  # Funcion que regresa el numero de ele
 
 suma_vecotres = [] # Lista para la suma de vector
 def vector_resultante():
-    raiz = 0
-    cuadrado = 0
 
-    for x in range(3):
-        vector = (vector_particula[x]) - (vector_particula[x+3]) # Se toma el valor de la carga 1 y 2, y  se restan
-        suma_vecotres.append(vector) # Se agregan a una nueva lista
-    print("|------------suma vecotres----------------|")
-    for y in range(3): # Se suman todos los valores al caudrado
-        print (xyz[y] + " = " + str(suma_vecotres[y]))
-        cuadrado = cuadrado + suma_vecotres[y] ** 2
-        raiz = math.sqrt(cuadrado) # Se saca la raiz del resultado de la suma (todos al cuadrado)
-        raiz = float(raiz)
-    print("|------------Valores----------------|")
+    Resultado = 0
+    for particula in range(numero_elementos_lista_particulas()-1):
+        raiz = 0
+        cuadrado = 0
+        for x in range(3):
+            vector = (vector_particula[(x+3)+(particula*3)]) - (vector_particula[x]) # Se toma el valor de la carga 1 y 2, y  se restan
+            suma_vecotres.append(vector) # Se agregan a una nueva lista
+        clear_screen()
+        print("|------------suma vecotres----------------|")
+        for y in range(3): # Se suman todos los valores al caudrado
+            print (xyz[y] + " = " + str(suma_vecotres[y+(particula*3)]))
+            cuadrado = cuadrado + suma_vecotres[y+(particula*3)] ** 2
+            raiz = math.sqrt(cuadrado) # Se saca la raiz del resultado de la suma (todos al cuadrado)
+            raiz = float(raiz)
+        print("|------------Valores----------------|")
 
-    print "k  = " + str(k)
-    print "Q1 =" + str(lista_particulas[0])
-    print "Q2 = " + str(lista_particulas[1])
-    print "Raiz al cubo = " + str(raiz**3)
-    print("|------------Resultado----------------|")
-    for z in range (3):
+        print "k  = " + str(k)
+        print "Q1 =" + str(lista_particulas[0])
+        print "Q2 = " + str(lista_particulas[particula+1])
+        print "Raiz al cubo = " + str(raiz**3)
+        print("|------------Resultado----------------|")
+        for z in range (3):
 
-        F = (( k*(lista_particulas[0])*(lista_particulas[1])) *suma_vecotres[z])/raiz**3 # Se aplica la formula
-        print xyz[z] + " = " + str(F)
+            F =  (( k*(lista_particulas[0])*(lista_particulas[particula+1])) *suma_vecotres[z+(particula*3)])/raiz**3 # Se aplica la formula
+            print xyz[z] + " = " + str(F)
+        Resultado = Resultado + F
 
 
 
