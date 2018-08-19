@@ -29,8 +29,8 @@ while opcion != 3:
     opcion = Libreria.lee_si_es_nuemero()
     Libreria.clear_screen()
     if opcion == 1:
-        print "++Calculo Fuerza magentica++\n"
-        print ("Ponga la primera particula como la particual con la que se calculara todo")
+        print "++Calculo de la fuerza electrica++\n"
+        print "Defina la particula sobre la cual se ejerce la fuerza"
         Libreria.pedir_particulas()
         """
         print ("Desea mostrar Procediemiento?:")
@@ -43,10 +43,10 @@ while opcion != 3:
         """
         Libreria.vector_resultante()
 
-        raw_input("\nPress Enter to conitnue")
+        raw_input("\nPress Enter to continue")
     elif opcion == 2:
-        print("Calulo de Campo Magnetico")
-        raw_input("\nPress Enter to conitnue")
+        print("Calulo de Campo Electrico")
+        raw_input("\nPress Enter to continue")
 
     else:
         break
