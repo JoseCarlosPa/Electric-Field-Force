@@ -2,7 +2,7 @@ import os
 import math
 xyz = ["X", "Y", "Z"]  # Lista con string para representacion
 lista_particulas = []  # Lista que tendra la carga de todas las particulas segun el usuario
-vector_particula = []  # Para el valor del vector en cada particula
+vector_particula = []  # Para el valor del vector en cada particula x
 k = 9e+9  # Cosntante K con valor 9x10 ^9
 
 
