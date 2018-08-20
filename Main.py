@@ -32,20 +32,12 @@ while opcion != 3:
         print "++Calculo Fuerza magentica++\n"
         print ("Ponga la primera particula como la particual con la que se calculara todo")
         Libreria.pedir_particulas()
-        """
-        print ("Desea mostrar Procediemiento?:")
-        respuesta = raw_input("SI / No")  # Pedimos una respeusta
-        if respuesta == "SI" or respuesta == "si" or respuesta == "Si" or respuesta == "sI":  # Validaciond de casi
-            # Cualquier respuesta
-            print "Muestra procedimiento"
-            raw_input("\nPess Enter to conitnue")
-        else:
-        """
         Libreria.vector_resultante()
-
         raw_input("\nPress Enter to conitnue")
     elif opcion == 2:
         print("Calulo de Campo Magnetico")
+        Libreria.pedir_particulas()
+
         raw_input("\nPress Enter to conitnue")
 
     else:
