@@ -11,9 +11,10 @@
 clc
 clear all
 disp('Este script encontrara la fuerza electrica o el campo electrico')
-repetir = 'y';
+repetir = 1;
 k = 9e09;
-while repetir == 'y'
+z = 0;
+while repetir == 1
     numCargas = input('Cuantas cargas hay en su sistema?\n');
     disp('Desea encontrar la fuerza electrica sobre una carga o el campo electrico en un punto?')
     disp('1. Fuerza electrica')
@@ -28,7 +29,9 @@ while repetir == 'y'
         qRefx = input('Ingresa el componente x de su vector de direccion\n');
         qRefy = input('Ingresa el componente y de su vector de direccion\n');
         qRefz = input('Ingresa el componente z de su vector de direccion\n');
+        
     elseif opcion == 2
+        m = 1;
         if numCargas < 1
             break
         elseif numCargas == 1
@@ -47,10 +50,11 @@ while repetir == 'y'
         numCargas = 2;
     end
     arregloCargas = [qRef qRefx qRefy qRefz; zeros(numCargas - 1, 4)];
-    
+    %arregloCargas(1,1) = qRef
+    %break;
     %arregloResp = [qRef qRefx qRefy qRefz; zeros
     for x = 2:1:numCargas
-        if z == 1
+        if z == 1 || m == 1
             fprintf('Ingrese la magnitud de la carga %d en micro Coulombs\n', x-1)
         end
         fprintf('Ingrese la magnitud de la carga %d en micro Coulombs\n', x)
@@ -62,7 +66,7 @@ while repetir == 'y'
         arregloCargas(x,1) = qMag;
         arregloCargas(x,2) = qx;
         arregloCargas(x,3) = qy;
-        arregloCargas(x+1,4) = qz;
+        arregloCargas(x,4) = qz;
     end
     suma = zeros(numCargas-1,4);
     vecRes = zeros(1,3);
@@ -73,13 +77,13 @@ while repetir == 'y'
         suma(i-1,2) = newVec(1);
         suma(i-1,3) = newVec(2);
         suma(i-1,4) = newVec(3); 
-        vecRes(1) = vecRes(1)+suma(i-1,1)*suma(i-1);
-        vecRes(2) = vecRes(1)+suma(i-1,1)*suma(i-1);
-        vecRes(1) = vecRes(1)+suma(i-1,1)*suma(i-1);
-        
+        vecRes(1) = vecRes(1)+suma(i-1,1)*suma(i-1,2);
+        vecRes(2) = vecRes(2)+suma(i-1,1)*suma(i-1,3);
+        vecRes(3) = vecRes(3)+suma(i-1,1)*suma(i-1,4);
     end
+    fprintf('\n\nEl resultado es (%f) i + (%f) j + (%f) k V/m\n\n',vecRes(1),vecRes(2),vecRes(3))
     
+    repetir = input('\n\nDesea hacer otro calculo? (Si = 1/No = 0)\n');
     
-    repetir = 'y';
 end
     

@@ -11,10 +11,11 @@
 clc
 clear all
 disp('Este script encontrara la fuerza electrica o el campo electrico')
-repetir = 'y';
+repetir = 1;
 k = 9e09;
 z = 0;
-while repetir == 'y'
+m = 0;
+while repetir == 1
     numCargas = input('Cuantas cargas hay en su sistema?\n');
     disp('Desea encontrar la fuerza electrica sobre una carga o el campo electrico en un punto?')
     disp('1. Fuerza electrica')
@@ -29,7 +30,9 @@ while repetir == 'y'
         qRefx = input('Ingresa el componente x de su vector de direccion\n');
         qRefy = input('Ingresa el componente y de su vector de direccion\n');
         qRefz = input('Ingresa el componente z de su vector de direccion\n');
+        
     elseif opcion == 2
+        m = 1;
         if numCargas < 1
             break
         elseif numCargas == 1
@@ -39,22 +42,23 @@ while repetir == 'y'
         qRefx = input('Ingresa el componente x del punto de referencia\n');
         qRefy = input('Ingresa el componente y del punto de referencia\n');
         qRefz = input('Ingresa el componente z del punto de referencia\n');
-        
+        numCargas = numCargas + 1;
     else 
         disp('La opcion ingresada no es correcta')
         break
     end
-    if z == 1
-        numCargas = 2;
-    end
-    arregloCargas = [qRef qRefx qRefy qRefz; zeros(numCargas - 1, 4)];
     
-    %arregloResp = [qRef qRefx qRefy qRefz; zeros
+    %Crear matriz con vectores de cargas
+    arregloCargas = [qRef qRefx qRefy qRefz; zeros(numCargas - 1, 4)];
+    %
+    
+    %Pedir cargas al usuario
     for x = 2:1:numCargas
-        if z == 1
+        if z == 1 || m == 1
             fprintf('Ingrese la magnitud de la carga %d en micro Coulombs\n', x-1)
+        else
+            fprintf('Ingrese la magnitud de la carga %d en micro Coulombs\n', x)
         end
-        fprintf('Ingrese la magnitud de la carga %d en micro Coulombs\n', x)
         qMag = input('');
         qMag = qMag * 1e-6;
         qx = input('Ingresa el componente x de su vector de direccion\n');
@@ -63,10 +67,14 @@ while repetir == 'y'
         arregloCargas(x,1) = qMag;
         arregloCargas(x,2) = qx;
         arregloCargas(x,3) = qy;
-        arregloCargas(x+1,4) = qz;
+        arregloCargas(x,4) = qz;
     end
+    
+    %Crear arreglo para guardar las sumas
     suma = zeros(numCargas-1,4);
+    %Arreglo para calcular el vector resultante
     vecRes = zeros(1,3);
+    %Iterar el calculo del vector resultante
     for i = 2:1:numCargas
         newVec = [arregloCargas(1,2)-arregloCargas(i,2) arregloCargas(1,3)-arregloCargas(i,3) arregloCargas(1,4)-arregloCargas(i,4)];
         magnitud = norm(newVec);
@@ -79,7 +87,8 @@ while repetir == 'y'
         vecRes(3) = vecRes(3)+suma(i-1,1)*suma(i-1,4);
     end
     fprintf('\n\nEl resultado es (%f) i + (%f) j + (%f) k V/m\n\n',vecRes(1),vecRes(2),vecRes(3))
+    %Preguntar al usuario si quiere otra vez
+    repetir = input('\n\nDesea hacer otro calculo? (Si = 1/No = 0)\n');
     
-    repetir = 'n';
 end
     
