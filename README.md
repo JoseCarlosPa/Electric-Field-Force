@@ -1,2 +1,2 @@
 # Electric-Field-Force
-Calculadora de campos y fuerzas magneticas usando la ley de Coulomb
+Calculadora de campos y fuerzas electrica usando la ley de Coulomb
